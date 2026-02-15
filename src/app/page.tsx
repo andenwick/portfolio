@@ -32,7 +32,7 @@ const projects = [
     tech: ["Next.js", "Stripe", "Admin Dashboard", "Inventory"],
     link: "https://friesianranchwear.com",
     linkLabel: "Visit site",
-    revenue: "$300/mo",
+    revenue: "Active client",
   },
   {
     title: "ProxyStaff",
