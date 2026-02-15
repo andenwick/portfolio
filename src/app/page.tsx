@@ -220,14 +220,7 @@ function ProjectCard({
   const ref = useFadeIn();
   return (
     <div ref={ref} className="fade-section project-card">
-      <div className="flex items-start justify-between gap-4">
-        <h3 className="text-xl font-normal text-white">{project.title}</h3>
-        {project.revenue && (
-          <span className="shrink-0 text-xs font-medium text-[#A3A3A3]">
-            {project.revenue}
-          </span>
-        )}
-      </div>
+      <h3 className="text-xl font-normal text-white">{project.title}</h3>
       <p className="mt-3 text-base leading-[1.65] text-white/80">
         {project.description}
       </p>
