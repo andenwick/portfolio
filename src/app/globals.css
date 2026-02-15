@@ -133,10 +133,10 @@ body {
   background: rgba(187, 222, 242, 0.3);
 }
 
-/* Mobile responsiveness */
-@media (max-width: 768px) {
-  section {
-    padding-top: 3rem !important;
-    padding-bottom: 3rem !important;
+/* Mobile: dividers between project cards */
+@media (max-width: 767px) {
+  .project-card + .project-card {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    padding-top: 32px;
   }
 }

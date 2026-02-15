@@ -134,22 +134,22 @@ function Nav() {
       <a href="/" className="text-sm font-medium tracking-wide text-white">
         AW
       </a>
-      <div className="flex items-center gap-5 sm:gap-8">
+      <div className="flex items-center gap-4 sm:gap-8">
         <a
           href="#projects"
-          className="text-sm text-white/80 transition-colors duration-300 hover:text-white"
+          className="text-xs text-white/80 transition-colors duration-300 hover:text-white sm:text-sm"
         >
           Projects
         </a>
         <a
           href="#about"
-          className="text-sm text-white/80 transition-colors duration-300 hover:text-white"
+          className="text-xs text-white/80 transition-colors duration-300 hover:text-white sm:text-sm"
         >
           About
         </a>
         <a
           href="#contact"
-          className="text-sm text-white/80 transition-colors duration-300 hover:text-white"
+          className="text-xs text-white/80 transition-colors duration-300 hover:text-white sm:text-sm"
         >
           Contact
         </a>
@@ -165,7 +165,7 @@ function Hero() {
       <div ref={ref} className="fade-section text-center sm:text-left">
         <SectionLabel>Software Developer</SectionLabel>
         <h1
-          className="mx-auto mt-8 text-[36px] font-light leading-[1.2] text-white sm:mx-0 sm:text-[48px] md:text-[60px]"
+          className="mx-auto mt-8 text-[32px] font-light leading-[1.15] text-white sm:mx-0 sm:text-[48px] md:text-[60px]"
           style={{ maxWidth: "672px" }}
         >
           Anden <span style={{ color: "rgb(187, 222, 242)" }}>Wickstrand</span>
@@ -202,7 +202,7 @@ function Projects() {
             All shipped.
           </p>
         </div>
-        <div className="mt-14 grid gap-8 sm:mt-20 md:grid-cols-2 md:gap-10">
+        <div className="mt-14 grid gap-4 sm:mt-20 sm:gap-8 md:grid-cols-2 md:gap-10">
           {projects.map((p) => (
             <ProjectCard key={p.title} project={p} />
           ))}
