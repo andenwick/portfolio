@@ -162,11 +162,11 @@ function Nav() {
 function Hero() {
   const ref = useFadeIn();
   return (
-    <section className="mx-auto max-w-[1024px] px-8 pb-20 pt-16">
+    <section className="mx-auto max-w-[1024px] px-6 pb-20 pt-12 sm:px-8 sm:pt-16">
       <div ref={ref} className="fade-section">
         <SectionLabel>Software Developer</SectionLabel>
         <h1
-          className="mt-6 text-[60px] font-light leading-[1.25] text-white"
+          className="mt-6 text-[36px] font-light leading-[1.25] text-white sm:text-[48px] md:text-[60px]"
           style={{ maxWidth: "672px" }}
         >
           Anden <span style={{ color: "rgb(187, 222, 242)" }}>Wickstrand</span>
@@ -176,8 +176,8 @@ function Hero() {
           style={{ maxWidth: "512px" }}
         >
           I&apos;m a 19-year-old computer engineering student who builds
-          software for real clients. I sell it, I build it, I support it. One
-          person, start to finish.
+          software for people. I sell it, I build it, I support it. One person,
+          start to finish.
         </p>
         <div className="mt-8 flex items-center gap-6">
           <GlassPill href="#projects">View Projects</GlassPill>
@@ -195,7 +195,7 @@ function Projects() {
       <div className="mx-auto max-w-[1024px] px-8 pt-20">
         <div className="mx-auto max-w-[768px] text-center">
           <SectionLabel>Projects</SectionLabel>
-          <h2 className="mt-4 text-[48px] font-normal leading-[1.25] text-white">
+          <h2 className="mt-4 text-[32px] font-normal leading-[1.25] text-white sm:text-[40px] md:text-[48px]">
             Things I&apos;ve built
           </h2>
           <p className="mt-4 text-base leading-[1.65] text-white/80">
@@ -203,7 +203,7 @@ function Projects() {
             All shipped.
           </p>
         </div>
-        <div className="mt-16 grid gap-6 md:grid-cols-2">
+        <div className="mt-12 grid gap-6 sm:mt-16 md:grid-cols-2">
           {projects.map((p) => (
             <ProjectCard key={p.title} project={p} />
           ))}
@@ -254,7 +254,7 @@ function About() {
       <div className="mx-auto max-w-[1024px] px-8 pt-20">
         <div ref={ref} className="fade-section mx-auto max-w-[768px] text-center">
           <SectionLabel>About</SectionLabel>
-          <h2 className="mt-4 text-[48px] font-normal leading-[1.25] text-white">
+          <h2 className="mt-4 text-[32px] font-normal leading-[1.25] text-white sm:text-[40px] md:text-[48px]">
             Who I am
           </h2>
         </div>
@@ -298,7 +298,7 @@ function Contact() {
           className="fade-section mx-auto max-w-[768px] text-center"
         >
           <SectionLabel>Contact</SectionLabel>
-          <h2 className="mt-4 text-[48px] font-normal leading-[1.25] text-white">
+          <h2 className="mt-4 text-[32px] font-normal leading-[1.25] text-white sm:text-[40px] md:text-[48px]">
             Let&apos;s talk
           </h2>
           <p className="mt-4 text-base leading-[1.65] text-white/80">
