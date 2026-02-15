@@ -161,24 +161,24 @@ function Nav() {
 function Hero() {
   const ref = useFadeIn();
   return (
-    <section className="mx-auto max-w-[1024px] px-6 pb-16 pt-10 sm:px-8 sm:pb-20 sm:pt-16">
+    <section className="mx-auto max-w-[1024px] px-6 pb-20 pt-12 sm:px-8 sm:pb-28 sm:pt-20">
       <div ref={ref} className="fade-section text-center sm:text-left">
         <SectionLabel>Software Developer</SectionLabel>
         <h1
-          className="mx-auto mt-6 text-[36px] font-light leading-[1.2] text-white sm:mx-0 sm:text-[48px] md:text-[60px]"
+          className="mx-auto mt-8 text-[36px] font-light leading-[1.2] text-white sm:mx-0 sm:text-[48px] md:text-[60px]"
           style={{ maxWidth: "672px" }}
         >
           Anden <span style={{ color: "rgb(187, 222, 242)" }}>Wickstrand</span>
         </h1>
         <p
-          className="mx-auto mt-5 text-base font-normal leading-[1.65] text-white/80 sm:mx-0 sm:text-lg"
+          className="mx-auto mt-6 text-base font-normal leading-[1.75] text-white/80 sm:mx-0 sm:text-lg"
           style={{ maxWidth: "512px" }}
         >
           I&apos;m a 19-year-old computer engineering student who builds
           software for people. I sell it, I build it, I support it. One person,
           start to finish.
         </p>
-        <div className="mt-8 flex items-center justify-center gap-6 sm:justify-start">
+        <div className="mt-10 flex items-center justify-center gap-6 sm:justify-start">
           <GlassPill href="#projects">View Projects</GlassPill>
           <ArrowLink href="#contact">Get in touch</ArrowLink>
         </div>
@@ -189,9 +189,9 @@ function Hero() {
 
 function Projects() {
   return (
-    <section id="projects" className="py-12 sm:py-20">
+    <section id="projects" className="py-16 sm:py-24">
       <Divider />
-      <div className="mx-auto max-w-[1024px] px-6 pt-12 sm:px-8 sm:pt-20">
+      <div className="mx-auto max-w-[1024px] px-6 pt-16 sm:px-8 sm:pt-24">
         <div className="mx-auto max-w-[768px] text-center">
           <SectionLabel>Projects</SectionLabel>
           <h2 className="mt-4 text-[32px] font-normal leading-[1.25] text-white sm:text-[40px] md:text-[48px]">
@@ -202,7 +202,7 @@ function Projects() {
             All shipped.
           </p>
         </div>
-        <div className="mt-12 grid gap-6 sm:mt-16 md:grid-cols-2">
+        <div className="mt-14 grid gap-8 sm:mt-20 md:grid-cols-2 md:gap-10">
           {projects.map((p) => (
             <ProjectCard key={p.title} project={p} />
           ))}
@@ -221,17 +221,17 @@ function ProjectCard({
   return (
     <div ref={ref} className="fade-section project-card">
       <h3 className="text-xl font-normal text-white">{project.title}</h3>
-      <p className="mt-3 text-base leading-[1.65] text-white/80">
+      <p className="mt-4 text-base leading-[1.75] text-white/80">
         {project.description}
       </p>
-      <div className="mt-5 flex flex-wrap gap-2">
+      <div className="mt-6 flex flex-wrap gap-2">
         {project.tech.map((t) => (
           <span key={t} className="tech-tag">
             {t}
           </span>
         ))}
       </div>
-      <div className="mt-5">
+      <div className="mt-6">
         <ArrowLink href={project.link}>{project.linkLabel}</ArrowLink>
       </div>
     </div>
@@ -241,9 +241,9 @@ function ProjectCard({
 function About() {
   const ref = useFadeIn();
   return (
-    <section id="about" className="py-12 sm:py-20">
+    <section id="about" className="py-16 sm:py-24">
       <Divider />
-      <div className="mx-auto max-w-[1024px] px-6 pt-12 sm:px-8 sm:pt-20">
+      <div className="mx-auto max-w-[1024px] px-6 pt-16 sm:px-8 sm:pt-24">
         <div ref={ref} className="fade-section mx-auto max-w-[768px] text-center">
           <SectionLabel>About</SectionLabel>
           <h2 className="mt-4 text-[32px] font-normal leading-[1.25] text-white sm:text-[40px] md:text-[48px]">
@@ -252,21 +252,21 @@ function About() {
         </div>
         <div
           ref={useFadeIn()}
-          className="fade-section mx-auto mt-10"
+          className="fade-section mx-auto mt-12"
           style={{ maxWidth: "672px" }}
         >
-          <p className="text-base leading-[1.65] text-white/80">
+          <p className="text-base leading-[1.75] text-white/80">
             I&apos;m studying Computer Engineering at Salt Lake Community
             College and transferring to the University of Utah. I live in
             Stansbury Park, about 30 minutes west of Salt Lake City.
           </p>
-          <p className="mt-6 text-base leading-[1.65] text-white/80">
+          <p className="mt-7 text-base leading-[1.75] text-white/80">
             I started building things because I wanted to understand how they
             work. That turned into building things for other people. Right now I
             have one paying client and a handful of projects that keep me busy
             outside of school.
           </p>
-          <p className="mt-6 text-base leading-[1.65] text-white/80">
+          <p className="mt-7 text-base leading-[1.75] text-white/80">
             I write a lot of TypeScript and JavaScript, but I also work in C
             when the problem calls for it. I like working close to the metal and
             understanding what happens under the abstractions. I don&apos;t have
@@ -282,9 +282,9 @@ function About() {
 function Contact() {
   const ref = useFadeIn();
   return (
-    <section id="contact" className="py-12 sm:py-20">
+    <section id="contact" className="py-16 sm:py-24">
       <Divider />
-      <div className="mx-auto max-w-[1024px] px-6 pt-12 sm:px-8 sm:pt-20">
+      <div className="mx-auto max-w-[1024px] px-6 pt-16 sm:px-8 sm:pt-24">
         <div
           ref={ref}
           className="fade-section mx-auto max-w-[768px] text-center"
