@@ -32,7 +32,6 @@ const projects = [
     tech: ["Next.js", "Stripe", "Admin Dashboard", "Inventory"],
     link: "https://friesianranchwear.com",
     linkLabel: "Visit site",
-    revenue: "Active client",
   },
   {
     title: "ProxyStaff",
@@ -131,11 +130,11 @@ function Divider() {
 
 function Nav() {
   return (
-    <nav className="mx-auto flex h-[88px] max-w-[1024px] items-center justify-between px-8">
+    <nav className="mx-auto flex h-[72px] max-w-[1024px] items-center justify-between px-6 sm:h-[88px] sm:px-8">
       <a href="/" className="text-sm font-medium tracking-wide text-white">
         AW
       </a>
-      <div className="flex items-center gap-8">
+      <div className="flex items-center gap-5 sm:gap-8">
         <a
           href="#projects"
           className="text-sm text-white/80 transition-colors duration-300 hover:text-white"
@@ -162,24 +161,24 @@ function Nav() {
 function Hero() {
   const ref = useFadeIn();
   return (
-    <section className="mx-auto max-w-[1024px] px-6 pb-20 pt-12 sm:px-8 sm:pt-16">
-      <div ref={ref} className="fade-section">
+    <section className="mx-auto max-w-[1024px] px-6 pb-16 pt-10 sm:px-8 sm:pb-20 sm:pt-16">
+      <div ref={ref} className="fade-section text-center sm:text-left">
         <SectionLabel>Software Developer</SectionLabel>
         <h1
-          className="mt-6 text-[36px] font-light leading-[1.25] text-white sm:text-[48px] md:text-[60px]"
+          className="mx-auto mt-6 text-[36px] font-light leading-[1.2] text-white sm:mx-0 sm:text-[48px] md:text-[60px]"
           style={{ maxWidth: "672px" }}
         >
           Anden <span style={{ color: "rgb(187, 222, 242)" }}>Wickstrand</span>
         </h1>
         <p
-          className="mt-[22px] text-lg font-normal leading-[1.65] text-white/80"
+          className="mx-auto mt-5 text-base font-normal leading-[1.65] text-white/80 sm:mx-0 sm:text-lg"
           style={{ maxWidth: "512px" }}
         >
           I&apos;m a 19-year-old computer engineering student who builds
           software for people. I sell it, I build it, I support it. One person,
           start to finish.
         </p>
-        <div className="mt-8 flex items-center gap-6">
+        <div className="mt-8 flex items-center justify-center gap-6 sm:justify-start">
           <GlassPill href="#projects">View Projects</GlassPill>
           <ArrowLink href="#contact">Get in touch</ArrowLink>
         </div>
@@ -190,9 +189,9 @@ function Hero() {
 
 function Projects() {
   return (
-    <section id="projects" className="py-20">
+    <section id="projects" className="py-12 sm:py-20">
       <Divider />
-      <div className="mx-auto max-w-[1024px] px-8 pt-20">
+      <div className="mx-auto max-w-[1024px] px-6 pt-12 sm:px-8 sm:pt-20">
         <div className="mx-auto max-w-[768px] text-center">
           <SectionLabel>Projects</SectionLabel>
           <h2 className="mt-4 text-[32px] font-normal leading-[1.25] text-white sm:text-[40px] md:text-[48px]">
@@ -249,9 +248,9 @@ function ProjectCard({
 function About() {
   const ref = useFadeIn();
   return (
-    <section id="about" className="py-20">
+    <section id="about" className="py-12 sm:py-20">
       <Divider />
-      <div className="mx-auto max-w-[1024px] px-8 pt-20">
+      <div className="mx-auto max-w-[1024px] px-6 pt-12 sm:px-8 sm:pt-20">
         <div ref={ref} className="fade-section mx-auto max-w-[768px] text-center">
           <SectionLabel>About</SectionLabel>
           <h2 className="mt-4 text-[32px] font-normal leading-[1.25] text-white sm:text-[40px] md:text-[48px]">
@@ -290,9 +289,9 @@ function About() {
 function Contact() {
   const ref = useFadeIn();
   return (
-    <section id="contact" className="py-20">
+    <section id="contact" className="py-12 sm:py-20">
       <Divider />
-      <div className="mx-auto max-w-[1024px] px-8 pt-20">
+      <div className="mx-auto max-w-[1024px] px-6 pt-12 sm:px-8 sm:pt-20">
         <div
           ref={ref}
           className="fade-section mx-auto max-w-[768px] text-center"
@@ -323,9 +322,9 @@ function Contact() {
 
 function Footer() {
   return (
-    <footer className="py-20">
+    <footer className="py-12 sm:py-20">
       <Divider />
-      <div className="mx-auto max-w-[1024px] px-8 pt-12">
+      <div className="mx-auto max-w-[1024px] px-6 pt-8 sm:px-8 sm:pt-12">
         <div className="flex flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="text-sm text-[#A3A3A3]">
             &copy; {new Date().getFullYear()} Anden Wickstrand

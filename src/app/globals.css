@@ -93,13 +93,21 @@ body {
 /* Card */
 .project-card {
   border-radius: 16px;
-  background: rgba(255, 255, 255, 0.01);
-  padding: 32px;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  padding: 24px;
   transition: background 0.3s var(--ease);
 }
 
+@media (min-width: 640px) {
+  .project-card {
+    padding: 32px;
+  }
+}
+
 .project-card:hover {
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.1);
 }
 
 /* Text link arrow */
