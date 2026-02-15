@@ -101,7 +101,7 @@ function ArrowLink({
   return (
     <a
       href={href}
-      className="arrow-link inline-flex items-center gap-1 text-sm font-medium text-white transition-opacity duration-300 hover:opacity-80"
+      className="arrow-link"
       target={href.startsWith("http") ? "_blank" : undefined}
       rel={href.startsWith("http") ? "noopener noreferrer" : undefined}
     >
@@ -112,28 +112,18 @@ function ArrowLink({
 }
 
 function SectionLabel({ children }: { children: React.ReactNode }) {
-  return (
-    <p className="section-label">
-      {children}
-    </p>
-  );
+  return <p className="section-label">{children}</p>;
 }
 
 /* ── Sections ── */
 
 function Nav() {
   return (
-    <nav className="mx-auto flex h-16 max-w-[1024px] items-center justify-between px-6 sm:h-20 sm:px-8">
-      <a href="/" className="text-sm font-medium tracking-widest text-white/90">
-        AW
-      </a>
-      <div className="flex items-center gap-6 sm:gap-8">
+    <nav className="nav">
+      <a href="/" className="nav-logo">AW</a>
+      <div className="nav-links">
         {["Projects", "About", "Contact"].map((item) => (
-          <a
-            key={item}
-            href={`#${item.toLowerCase()}`}
-            className="text-[13px] text-white/50 transition-colors duration-300 hover:text-white sm:text-sm"
-          >
+          <a key={item} href={`#${item.toLowerCase()}`} className="nav-link">
             {item}
           </a>
         ))}
@@ -145,20 +135,19 @@ function Nav() {
 function Hero() {
   const ref = useFadeIn();
   return (
-    <section className="mx-auto max-w-[1024px] px-6 sm:px-8">
-      <div className="pb-24 pt-16 sm:pb-32 sm:pt-24">
+    <section className="section-wrap">
+      <div className="section-inner hero-inner">
         <div ref={ref} className="fade-section">
           <SectionLabel>Software Developer</SectionLabel>
-          <h1 className="mt-6 max-w-[672px] text-[clamp(2.25rem,8vw,3.75rem)] font-light leading-[1.1] text-white">
-            Anden{" "}
-            <span className="text-[rgb(187,222,242)]">Wickstrand</span>
+          <h1 className="hero-title">
+            Anden <span className="hero-accent">Wickstrand</span>
           </h1>
-          <p className="mt-6 max-w-[480px] text-[15px] leading-[1.7] text-white/60 sm:text-base sm:leading-[1.75]">
+          <p className="hero-desc">
             19-year-old computer engineering student who builds software for
             people. I sell it, I build it, I support it. One person, start to
             finish.
           </p>
-          <div className="mt-10 flex items-center gap-6">
+          <div className="hero-ctas">
             <GlassPill href="#projects">View Projects</GlassPill>
             <ArrowLink href="#contact">Get in touch</ArrowLink>
           </div>
@@ -172,19 +161,14 @@ function Projects() {
   return (
     <section id="projects">
       <div className="section-divider" />
-      <div className="mx-auto max-w-[1024px] px-6 sm:px-8">
-        <div className="pb-24 pt-20 sm:pb-32 sm:pt-28">
-          <div className="max-w-[768px]">
-            <SectionLabel>Projects</SectionLabel>
-            <h2 className="section-heading mt-5">
-              Things I&apos;ve built
-            </h2>
-            <p className="mt-4 max-w-[512px] text-[15px] leading-[1.7] text-white/60 sm:text-base">
-              Client work, personal tools, and things I built to learn. All
-              shipped.
-            </p>
-          </div>
-          <div className="mt-16 space-y-0 sm:mt-20 sm:grid sm:grid-cols-2 sm:gap-x-12 sm:gap-y-14 sm:space-y-0">
+      <div className="section-wrap">
+        <div className="section-inner">
+          <SectionLabel>Projects</SectionLabel>
+          <h2 className="section-heading">Things I&apos;ve built</h2>
+          <p className="section-desc">
+            Client work, personal tools, and things I built to learn. All shipped.
+          </p>
+          <div className="project-grid">
             {projects.map((p, i) => (
               <ProjectCard key={p.title} project={p} index={i} />
             ))}
@@ -206,20 +190,16 @@ function ProjectCard({
   return (
     <div
       ref={ref}
-      className={`fade-section py-8 sm:py-0 ${index > 0 ? "border-t border-white/[0.06] sm:border-t-0" : ""}`}
+      className={`fade-section project-card ${index > 0 ? "project-card-border" : ""}`}
     >
-      <div className="flex items-baseline justify-between gap-4">
-        <h3 className="text-lg font-normal text-white sm:text-xl">{project.title}</h3>
+      <div className="project-header">
+        <h3 className="project-title">{project.title}</h3>
         <ArrowLink href={project.link}>{project.linkLabel}</ArrowLink>
       </div>
-      <p className="mt-3 text-[15px] leading-[1.7] text-white/60">
-        {project.description}
-      </p>
-      <div className="mt-4 flex flex-wrap gap-2">
+      <p className="project-desc">{project.description}</p>
+      <div className="project-tags">
         {project.tech.map((t) => (
-          <span key={t} className="tech-tag">
-            {t}
-          </span>
+          <span key={t} className="tech-tag">{t}</span>
         ))}
       </div>
     </div>
@@ -231,26 +211,24 @@ function About() {
   return (
     <section id="about">
       <div className="section-divider" />
-      <div className="mx-auto max-w-[1024px] px-6 sm:px-8">
-        <div className="pb-24 pt-20 sm:pb-32 sm:pt-28">
-          <div ref={ref} className="fade-section max-w-[768px]">
+      <div className="section-wrap">
+        <div className="section-inner">
+          <div ref={ref} className="fade-section">
             <SectionLabel>About</SectionLabel>
-            <h2 className="section-heading mt-5">
-              Who I am
-            </h2>
+            <h2 className="section-heading">Who I am</h2>
           </div>
-          <div className="mt-10 max-w-[600px] space-y-6 sm:mt-14">
-            <p ref={useFadeIn()} className="fade-section text-[15px] leading-[1.8] text-white/60 sm:text-base">
+          <div className="about-text">
+            <p ref={useFadeIn()} className="fade-section about-p">
               Computer Engineering student at SLCC, transferring to the
               University of Utah. Based in Stansbury Park, about 30 minutes west
               of Salt Lake City.
             </p>
-            <p ref={useFadeIn()} className="fade-section text-[15px] leading-[1.8] text-white/60 sm:text-base">
+            <p ref={useFadeIn()} className="fade-section about-p">
               I started building things to understand how they work. That turned
               into building things for other people. One paying client, a
               handful of projects, always shipping.
             </p>
-            <p ref={useFadeIn()} className="fade-section text-[15px] leading-[1.8] text-white/60 sm:text-base">
+            <p ref={useFadeIn()} className="fade-section about-p">
               Mostly TypeScript and JavaScript. Also C when the problem calls
               for it. I like working close to the metal. No degree yet — I just
               ship things and learn as I go.
@@ -267,26 +245,22 @@ function Contact() {
   return (
     <section id="contact">
       <div className="section-divider" />
-      <div className="mx-auto max-w-[1024px] px-6 sm:px-8">
-        <div className="pb-24 pt-20 sm:pb-32 sm:pt-28">
-          <div ref={ref} className="fade-section max-w-[768px]">
+      <div className="section-wrap">
+        <div className="section-inner">
+          <div ref={ref} className="fade-section">
             <SectionLabel>Contact</SectionLabel>
-            <h2 className="section-heading mt-5">
-              Let&apos;s talk
-            </h2>
-            <p className="mt-4 text-[15px] leading-[1.7] text-white/60 sm:text-base">
+            <h2 className="section-heading">Let&apos;s talk</h2>
+            <p className="section-desc">
               Project, question, or just want to connect.
             </p>
-            <div className="mt-10">
+            <div style={{ marginTop: "40px" }}>
               <GlassPill href="mailto:andenwick@gmail.com">
                 andenwick@gmail.com
               </GlassPill>
             </div>
-            <div className="mt-8 flex items-center gap-8">
+            <div className="contact-links">
               <ArrowLink href="https://github.com/andenwick">GitHub</ArrowLink>
-              <ArrowLink href="https://linkedin.com/in/andenwick">
-                LinkedIn
-              </ArrowLink>
+              <ArrowLink href="https://linkedin.com/in/andenwick">LinkedIn</ArrowLink>
             </div>
           </div>
         </div>
@@ -299,35 +273,29 @@ function Footer() {
   return (
     <footer>
       <div className="section-divider" />
-      <div className="mx-auto max-w-[1024px] px-6 sm:px-8">
-        <div className="flex flex-col items-start justify-between gap-4 py-10 sm:flex-row sm:items-center sm:py-12">
-          <p className="text-[13px] text-white/30">
-            &copy; {new Date().getFullYear()} Anden Wickstrand
-          </p>
-          <div className="flex items-center gap-6">
-            {[
-              { label: "GitHub", href: "https://github.com/andenwick" },
-              { label: "LinkedIn", href: "https://linkedin.com/in/andenwick" },
-              { label: "Email", href: "mailto:andenwick@gmail.com" },
-            ].map((l) => (
-              <a
-                key={l.label}
-                href={l.href}
-                className="text-[13px] text-white/30 transition-colors duration-300 hover:text-white/60"
-                target={l.href.startsWith("http") ? "_blank" : undefined}
-                rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
-              >
-                {l.label}
-              </a>
-            ))}
-          </div>
+      <div className="footer-inner">
+        <p className="footer-copy">&copy; {new Date().getFullYear()} Anden Wickstrand</p>
+        <div className="footer-links">
+          {[
+            { label: "GitHub", href: "https://github.com/andenwick" },
+            { label: "LinkedIn", href: "https://linkedin.com/in/andenwick" },
+            { label: "Email", href: "mailto:andenwick@gmail.com" },
+          ].map((l) => (
+            <a
+              key={l.label}
+              href={l.href}
+              className="footer-link"
+              target={l.href.startsWith("http") ? "_blank" : undefined}
+              rel={l.href.startsWith("http") ? "noopener noreferrer" : undefined}
+            >
+              {l.label}
+            </a>
+          ))}
         </div>
       </div>
     </footer>
   );
 }
-
-/* ── Page ── */
 
 export default function Home() {
   return (
