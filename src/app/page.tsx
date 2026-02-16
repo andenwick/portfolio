@@ -34,6 +34,14 @@ const projects = [
     linkLabel: "Visit site",
   },
   {
+    title: "Memory Pipeline",
+    description:
+      "Persistent memory for LLM agents. Extracts structured insights from conversations, deduplicates with two-phase integration (deterministic + LLM judgment), stores in a vector database with versioning and cross-references.",
+    tech: ["Python", "Qdrant", "fastembed"],
+    link: "https://github.com/andenwick/memory-pipeline",
+    linkLabel: "GitHub",
+  },
+  {
     title: "ProxyStaff",
     description:
       "AI assistant connecting to WhatsApp and Telegram. Multi-tenant, scheduled tasks, persistent memory across conversations.",
